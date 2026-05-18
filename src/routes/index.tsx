@@ -6,17 +6,14 @@ import {
   Home,
   CloudSun,
   GraduationCap,
-  Cpu,
   Download,
-  ArrowRight,
-  Radio,
   Wifi,
-  Zap,
   Globe2,
   Github,
   Instagram,
   Youtube,
-  Check,
+  Apple,
+  Play,
 } from "lucide-react";
 import logo from "@/assets/logo-landel.png";
 import galleryGamepad from "@/assets/gallery-gamepad.jpg";
@@ -41,8 +38,8 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const FEATURE_ICONS = [Gamepad2, Leaf, Home, CloudSun, GraduationCap, Cpu] as const;
-const FEATURE_TONES = ["primary", "secondary", "purple", "accent", "primary", "secondary"] as const;
+const FEATURE_ICONS = [Gamepad2, Leaf, Home, CloudSun, GraduationCap] as const;
+const FEATURE_TONES = ["primary", "secondary", "purple", "accent", "primary"] as const;
 
 function LandingPage() {
   const [lang, setLang] = useState<Lang>("pt");
@@ -54,7 +51,6 @@ function LandingPage() {
       <Hero t={t} />
       <Features t={t} />
       <Gallery t={t} />
-      <Bridge t={t} />
       <Footer t={t} />
     </div>
   );
@@ -80,7 +76,7 @@ function Header({
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#features" className="hover:text-foreground transition-colors">{t.nav.features}</a>
           <a href="#gallery" className="hover:text-foreground transition-colors">{t.nav.gallery}</a>
-          <a href="#bridge" className="hover:text-foreground transition-colors">{t.nav.bridge}</a>
+          
         </nav>
         <div className="flex items-center gap-3">
           <LangSwitcher lang={lang} setLang={setLang} />
@@ -139,23 +135,21 @@ function Hero({ t }: { t: (typeof translations)[Lang] }) {
           <p className="mt-6 text-lg text-muted-foreground max-w-xl">{t.hero.subtitle}</p>
           <div id="download" className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=br.app.landel"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground glow-yellow hover:scale-[1.02] transition-transform"
             >
-              <Download className="size-5" /> {t.hero.ctaPrimary}
+              <Play className="size-5" /> {t.hero.ctaPrimary}
             </a>
             <a
-              href="#bridge"
+              href="https://apps.apple.com/app/landel"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-6 py-3 font-semibold text-foreground hover:bg-card transition-colors"
             >
-              {t.hero.ctaSecondary} <ArrowRight className="size-4" />
+              <Apple className="size-5" /> {t.hero.ctaSecondary}
             </a>
-          </div>
-
-          <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
-            <Stat value="10k+" label={t.hero.statRobots} tone="primary" />
-            <Stat value="120+" label={t.hero.statSchools} tone="secondary" />
-            <Stat value="50M+" label={t.hero.statSensors} tone="purple" />
           </div>
         </div>
 
@@ -167,16 +161,6 @@ function Hero({ t }: { t: (typeof translations)[Lang] }) {
   );
 }
 
-function Stat({ value, label, tone }: { value: string; label: string; tone: "primary" | "secondary" | "purple" }) {
-  const toneClass =
-    tone === "primary" ? "text-primary" : tone === "secondary" ? "text-secondary" : "text-purple";
-  return (
-    <div>
-      <div className={`text-3xl font-display font-bold ${toneClass}`}>{value}</div>
-      <div className="mt-1 text-xs text-muted-foreground">{label}</div>
-    </div>
-  );
-}
 
 function PhoneMockup() {
   return (
@@ -231,9 +215,9 @@ function PhoneMockup() {
             </div>
           </div>
           {/* bottom badge */}
-          <div className="mx-5 mb-5 mt-4 rounded-xl border border-purple/40 bg-purple/10 px-3 py-2 flex items-center gap-2">
-            <div className="size-2 rounded-full bg-purple animate-pulse-glow" />
-            <span className="text-[11px] text-purple font-medium">Landel Bridge connected</span>
+          <div className="mx-5 mb-5 mt-4 rounded-xl border border-secondary/40 bg-secondary/10 px-3 py-2 flex items-center gap-2">
+            <div className="size-2 rounded-full bg-secondary animate-pulse-glow" />
+            <span className="text-[11px] text-secondary font-medium">Bluetooth connected</span>
           </div>
         </div>
       </div>
@@ -361,74 +345,6 @@ function GalleryCard({
   );
 }
 
-/* ---------- Bridge ---------- */
-function Bridge({ t }: { t: (typeof translations)[Lang] }) {
-  const icons = [Radio, Wifi, Zap] as const;
-  return (
-    <section id="bridge" className="relative py-28 border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative">
-          <div
-            className="absolute -inset-8 rounded-3xl blur-3xl opacity-40"
-            style={{ background: "var(--gradient-purple)" }}
-          />
-          <div className="relative rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)]">
-            <div className="aspect-[4/3] rounded-2xl bg-background border border-border relative overflow-hidden flex items-center justify-center">
-              <div className="bg-grid absolute inset-0 opacity-50" />
-              {/* device */}
-              <div className="relative w-3/4 aspect-[5/3] rounded-xl bg-card border border-purple/40 glow-purple flex items-center justify-center">
-                <div className="absolute -top-3 left-6 right-6 h-1.5 rounded-full bg-purple/40" />
-                <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-purple">Landel</div>
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Bridge v1</div>
-                </div>
-                <div className="absolute top-3 right-3 size-2 rounded-full bg-secondary animate-pulse-glow" />
-                <div className="absolute bottom-3 left-3 size-2 rounded-full bg-primary animate-pulse-glow" />
-              </div>
-              {/* signal rings */}
-              <div className="absolute size-44 rounded-full border border-secondary/30 animate-pulse-glow" />
-              <div className="absolute size-72 rounded-full border border-primary/20 animate-pulse-glow" />
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple/40 bg-purple/10 px-3 py-1 text-xs font-medium text-purple">
-            <Cpu className="size-3.5" /> {t.bridge.eyebrow}
-          </div>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold leading-tight">
-            {t.bridge.title}
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground">{t.bridge.subtitle}</p>
-
-          <ul className="mt-8 space-y-4">
-            {t.bridge.points.map((p, i) => {
-              const Icon = icons[i];
-              return (
-                <li key={p.title} className="flex gap-4">
-                  <div className="shrink-0 size-10 rounded-xl border border-secondary/30 bg-secondary/10 text-secondary flex items-center justify-center">
-                    <Icon className="size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">{p.title}</div>
-                    <div className="text-sm text-muted-foreground mt-0.5">{p.desc}</div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-
-          <a
-            href="#"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-purple px-6 py-3 font-semibold text-purple-foreground glow-purple hover:scale-[1.02] transition-transform"
-          >
-            <Check className="size-4" /> {t.bridge.cta}
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------- Footer ---------- */
 function Footer({ t }: { t: (typeof translations)[Lang] }) {
@@ -452,8 +368,8 @@ function Footer({ t }: { t: (typeof translations)[Lang] }) {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">{t.footer.product}</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="#download" className="hover:text-primary transition-colors">{t.footer.links.download}</a></li>
-            <li><a href="#bridge" className="hover:text-primary transition-colors">{t.footer.links.bridge}</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=br.app.landel" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t.footer.links.playstore}</a></li>
+            <li><a href="https://apps.apple.com/app/landel" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t.footer.links.appstore}</a></li>
             <li><a href="#" className="hover:text-primary transition-colors">{t.footer.links.docs}</a></li>
           </ul>
         </div>
