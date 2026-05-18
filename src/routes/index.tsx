@@ -38,8 +38,8 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const FEATURE_ICONS = [Gamepad2, Leaf, Home, CloudSun, GraduationCap, Cpu] as const;
-const FEATURE_TONES = ["primary", "secondary", "purple", "accent", "primary", "secondary"] as const;
+const FEATURE_ICONS = [Gamepad2, Leaf, Home, CloudSun, GraduationCap] as const;
+const FEATURE_TONES = ["primary", "secondary", "purple", "accent", "primary"] as const;
 
 function LandingPage() {
   const [lang, setLang] = useState<Lang>("pt");
