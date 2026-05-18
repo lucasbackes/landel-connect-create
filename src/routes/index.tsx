@@ -135,23 +135,21 @@ function Hero({ t }: { t: (typeof translations)[Lang] }) {
           <p className="mt-6 text-lg text-muted-foreground max-w-xl">{t.hero.subtitle}</p>
           <div id="download" className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=br.app.landel"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground glow-yellow hover:scale-[1.02] transition-transform"
             >
-              <Download className="size-5" /> {t.hero.ctaPrimary}
+              <Play className="size-5" /> {t.hero.ctaPrimary}
             </a>
             <a
-              href="#bridge"
+              href="https://apps.apple.com/app/landel"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-6 py-3 font-semibold text-foreground hover:bg-card transition-colors"
             >
-              {t.hero.ctaSecondary} <ArrowRight className="size-4" />
+              <Apple className="size-5" /> {t.hero.ctaSecondary}
             </a>
-          </div>
-
-          <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
-            <Stat value="10k+" label={t.hero.statRobots} tone="primary" />
-            <Stat value="120+" label={t.hero.statSchools} tone="secondary" />
-            <Stat value="50M+" label={t.hero.statSensors} tone="purple" />
           </div>
         </div>
 
