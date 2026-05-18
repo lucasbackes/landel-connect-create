@@ -76,7 +76,7 @@ function Header({
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#features" className="hover:text-foreground transition-colors">{t.nav.features}</a>
           <a href="#gallery" className="hover:text-foreground transition-colors">{t.nav.gallery}</a>
-          <a href="#bridge" className="hover:text-foreground transition-colors">{t.nav.bridge}</a>
+          
         </nav>
         <div className="flex items-center gap-3">
           <LangSwitcher lang={lang} setLang={setLang} />
