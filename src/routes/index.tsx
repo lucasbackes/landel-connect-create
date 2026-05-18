@@ -368,8 +368,8 @@ function Footer({ t }: { t: (typeof translations)[Lang] }) {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">{t.footer.product}</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="#download" className="hover:text-primary transition-colors">{t.footer.links.download}</a></li>
-            <li><a href="#bridge" className="hover:text-primary transition-colors">{t.footer.links.bridge}</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=br.app.landel" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t.footer.links.playstore}</a></li>
+            <li><a href="https://apps.apple.com/app/landel" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t.footer.links.appstore}</a></li>
             <li><a href="#" className="hover:text-primary transition-colors">{t.footer.links.docs}</a></li>
           </ul>
         </div>
