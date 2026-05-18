@@ -6,17 +6,14 @@ import {
   Home,
   CloudSun,
   GraduationCap,
-  Cpu,
   Download,
-  ArrowRight,
-  Radio,
   Wifi,
-  Zap,
   Globe2,
   Github,
   Instagram,
   Youtube,
-  Check,
+  Apple,
+  Play,
 } from "lucide-react";
 import logo from "@/assets/logo-landel.png";
 import galleryGamepad from "@/assets/gallery-gamepad.jpg";
