@@ -68,7 +68,7 @@ function Header({
 }: {
   lang: Lang;
   setLang: (l: Lang) => void;
-  t: typeof translations.pt;
+  t: (typeof translations)[Lang];
 }) {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
@@ -118,7 +118,7 @@ function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => voi
 }
 
 /* ---------- Hero ---------- */
-function Hero({ t }: { t: typeof translations.pt }) {
+function Hero({ t }: { t: (typeof translations)[Lang] }) {
   return (
     <section id="top" className="relative">
       <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
@@ -242,7 +242,7 @@ function PhoneMockup() {
 }
 
 /* ---------- Features ---------- */
-function Features({ t }: { t: typeof translations.pt }) {
+function Features({ t }: { t: (typeof translations)[Lang] }) {
   return (
     <section id="features" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
@@ -289,7 +289,7 @@ function FeatureCard({
 }
 
 /* ---------- Gallery ---------- */
-function Gallery({ t }: { t: typeof translations.pt }) {
+function Gallery({ t }: { t: (typeof translations)[Lang] }) {
   const images = [galleryGamepad, galleryClassroom, galleryGarden];
   return (
     <section id="gallery" className="relative py-28 border-t border-border">
@@ -362,7 +362,7 @@ function GalleryCard({
 }
 
 /* ---------- Bridge ---------- */
-function Bridge({ t }: { t: typeof translations.pt }) {
+function Bridge({ t }: { t: (typeof translations)[Lang] }) {
   const icons = [Radio, Wifi, Zap] as const;
   return (
     <section id="bridge" className="relative py-28 border-t border-border">
@@ -431,7 +431,7 @@ function Bridge({ t }: { t: typeof translations.pt }) {
 }
 
 /* ---------- Footer ---------- */
-function Footer({ t }: { t: typeof translations.pt }) {
+function Footer({ t }: { t: (typeof translations)[Lang] }) {
   return (
     <footer className="relative border-t border-border bg-background/50">
       <div className="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-4 gap-10">
