@@ -161,16 +161,6 @@ function Hero({ t }: { t: (typeof translations)[Lang] }) {
   );
 }
 
-function Stat({ value, label, tone }: { value: string; label: string; tone: "primary" | "secondary" | "purple" }) {
-  const toneClass =
-    tone === "primary" ? "text-primary" : tone === "secondary" ? "text-secondary" : "text-purple";
-  return (
-    <div>
-      <div className={`text-3xl font-display font-bold ${toneClass}`}>{value}</div>
-      <div className="mt-1 text-xs text-muted-foreground">{label}</div>
-    </div>
-  );
-}
 
 function PhoneMockup() {
   return (
