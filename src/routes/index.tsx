@@ -215,9 +215,9 @@ function PhoneMockup() {
             </div>
           </div>
           {/* bottom badge */}
-          <div className="mx-5 mb-5 mt-4 rounded-xl border border-purple/40 bg-purple/10 px-3 py-2 flex items-center gap-2">
-            <div className="size-2 rounded-full bg-purple animate-pulse-glow" />
-            <span className="text-[11px] text-purple font-medium">Landel Bridge connected</span>
+          <div className="mx-5 mb-5 mt-4 rounded-xl border border-secondary/40 bg-secondary/10 px-3 py-2 flex items-center gap-2">
+            <div className="size-2 rounded-full bg-secondary animate-pulse-glow" />
+            <span className="text-[11px] text-secondary font-medium">Bluetooth connected</span>
           </div>
         </div>
       </div>
