@@ -51,7 +51,6 @@ function LandingPage() {
       <Hero t={t} />
       <Features t={t} />
       <Gallery t={t} />
-      <Bridge t={t} />
       <Footer t={t} />
     </div>
   );
