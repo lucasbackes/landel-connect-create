@@ -7,7 +7,7 @@ import {
   CloudSun,
   GraduationCap,
   Download,
-  Wifi,
+  
   Globe2,
   Github,
   Instagram,
@@ -19,6 +19,7 @@ import logo from "@/assets/logo-landel.png";
 import galleryGamepad from "@/assets/gallery-gamepad.jpg";
 import galleryClassroom from "@/assets/gallery-classroom.jpg";
 import galleryGarden from "@/assets/gallery-garden.jpg";
+import appGamepad from "@/assets/app-gamepad.png";
 import { translations, type Lang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
@@ -171,54 +172,12 @@ function PhoneMockup() {
       />
       <div className="relative w-[280px] sm:w-[320px] aspect-[9/19] rounded-[3rem] border border-border bg-card p-3 shadow-[var(--shadow-elevated)]">
         <div className="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-b-2xl bg-background z-10" />
-        <div className="h-full w-full rounded-[2.4rem] bg-background overflow-hidden relative flex flex-col">
-          {/* status bar */}
-          <div className="flex justify-between items-center px-6 pt-4 text-[10px] text-muted-foreground">
-            <span>9:41</span>
-            <div className="flex gap-1 items-center">
-              <Wifi className="size-3" />
-              <span>100%</span>
-            </div>
-          </div>
-          {/* telemetry header */}
-          <div className="px-5 mt-6">
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Live</div>
-            <div className="flex items-baseline gap-2 mt-1">
-              <span className="text-2xl font-bold text-secondary">24.6°</span>
-              <span className="text-xs text-muted-foreground">soil • 62%</span>
-            </div>
-            <div className="mt-2 h-10 flex items-end gap-1">
-              {[3, 5, 4, 7, 6, 8, 5, 9, 7, 10, 8, 11, 9, 12, 10].map((h, i) => (
-                <div
-                  key={i}
-                  className="flex-1 rounded-sm bg-secondary/70"
-                  style={{ height: `${h * 8}%` }}
-                />
-              ))}
-            </div>
-          </div>
-          {/* gamepad */}
-          <div className="flex-1 px-5 mt-6 grid grid-cols-3 gap-3 items-center">
-            <div className="flex justify-center">
-              <div className="size-16 rounded-full bg-primary glow-yellow flex items-center justify-center">
-                <div className="size-7 rounded-full bg-background/30" />
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="size-9 rounded-lg bg-card border border-border flex items-center justify-center text-secondary">▲</div>
-              <div className="size-9 rounded-lg bg-card border border-border flex items-center justify-center text-secondary">▼</div>
-            </div>
-            <div className="flex justify-center">
-              <div className="size-16 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold">
-                A
-              </div>
-            </div>
-          </div>
-          {/* bottom badge */}
-          <div className="mx-5 mb-5 mt-4 rounded-xl border border-secondary/40 bg-secondary/10 px-3 py-2 flex items-center gap-2">
-            <div className="size-2 rounded-full bg-secondary animate-pulse-glow" />
-            <span className="text-[11px] text-secondary font-medium">Bluetooth connected</span>
-          </div>
+        <div className="h-full w-full rounded-[2.4rem] bg-background overflow-hidden relative">
+          <img
+            src={appGamepad}
+            alt="Landel app — tela do Gamepad conectado via Bluetooth"
+            className="absolute inset-0 size-full object-cover"
+          />
         </div>
       </div>
     </div>
