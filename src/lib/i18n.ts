@@ -23,15 +23,15 @@ export const translations = {
         },
         {
           title: "Hortas & Agro IoT",
-          desc: "Monitore umidade do solo, temperatura e acione irrigação automatizada. Converse com sua horta residencial.",
+          desc: "Monitore umidade do solo, temperatura e acione irrigação via Bluetooth Clássico e BLE. É necessário estar próximo do projeto. Para receber dados históricos armazenados (não ao vivo), o robô ou placa precisa ter essa capacidade.",
         },
         {
           title: "Automação Residencial",
-          desc: "Controle relés para lâmpadas, monitore consumo de energia e gerencie sensores de presença em tempo real.",
+          desc: "Controle relés para lâmpadas e monitore sensores via Bluetooth Clássico e BLE. É necessário estar próximo do projeto. Para receber dados históricos armazenados (não ao vivo), o robô ou placa precisa ter essa capacidade.",
         },
         {
           title: "Estações Meteorológicas",
-          desc: "Telemetria ao vivo de chuva, vento e pressão atmosférica direto no seu celular.",
+          desc: "Acompanhe telemetria de chuva, vento e pressão via Bluetooth Clássico e BLE. É necessário estar próximo da estação. Para receber dados históricos armazenados (não ao vivo), o robô ou placa precisa ter essa capacidade.",
         },
         {
           title: "Ferramenta Pedagógica",
@@ -81,9 +81,9 @@ export const translations = {
       subtitle: "From the classroom to the smart garden, Landel adapts to your project.",
       items: [
         { title: "Robot Control", desc: "Drive Arduino robots and mobile platforms via Classic Bluetooth and BLE, with custom button and joystick layouts." },
-        { title: "Gardens & Agro IoT", desc: "Monitor soil moisture, temperature and trigger automated irrigation. Talk to your home garden." },
-        { title: "Home Automation", desc: "Control relays for lights, monitor energy usage and manage presence sensors in real time." },
-        { title: "Weather Stations", desc: "Live telemetry from rain, wind and pressure sensors straight to your phone." },
+        { title: "Gardens & Agro IoT", desc: "Monitor soil moisture, temperature and trigger automated irrigation via Classic Bluetooth and BLE. You need to be close to your project. To receive stored historical data (not live), your robot or board must support it." },
+        { title: "Home Automation", desc: "Control relays for lights and monitor sensors via Classic Bluetooth and BLE. You need to be close to your project. To receive stored historical data (not live), your robot or board must support it." },
+        { title: "Weather Stations", desc: "Track telemetry from rain, wind and atmospheric pressure via Classic Bluetooth and BLE. You need to be close to the station. To receive stored historical data (not live), your robot or board must support it." },
         { title: "Teaching Tool", desc: "Ideal ecosystem for schools and robotics beginners, with simple Bluetooth pairing between phone and robots." },
       ],
     },
@@ -122,9 +122,9 @@ export const translations = {
       subtitle: "Del aula al huerto inteligente, Landel se adapta a tu proyecto.",
       items: [
         { title: "Control de Robots", desc: "Pilota robots Arduino y plataformas móviles vía Bluetooth Clásico y BLE, con layouts personalizables." },
-        { title: "Huertos & Agro IoT", desc: "Monitorea humedad del suelo, temperatura y activa riego automatizado. Habla con tu huerto." },
-        { title: "Domótica", desc: "Controla relés para luces, monitorea consumo energético y gestiona sensores de presencia." },
-        { title: "Estaciones Meteorológicas", desc: "Telemetría en vivo de lluvia, viento y presión directo en tu celular." },
+        { title: "Huertos & Agro IoT", desc: "Monitorea humedad del suelo, temperatura y activa riego automatizado vía Bluetooth Clásico y BLE. Es necesario estar cerca del proyecto. Para recibir datos históricos almacenados (no en vivo), tu robot o placa debe tener esa capacidad." },
+        { title: "Domótica", desc: "Controla relés para luces y monitorea sensores vía Bluetooth Clásico y BLE. Es necesario estar cerca del proyecto. Para recibir datos históricos almacenados (no en vivo), tu robot o placa debe tener esa capacidad." },
+        { title: "Estaciones Meteorológicas", desc: "Sigue telemetría de lluvia, viento y presión atmosférica vía Bluetooth Clásico y BLE. Es necesario estar cerca de la estación. Para recibir datos históricos almacenados (no en vivo), tu robot o placa debe tener esa capacidad." },
         { title: "Herramienta Pedagógica", desc: "Ecosistema ideal para escuelas y principiantes en robótica, con conexión Bluetooth simple entre celular y robots." },
       ],
     },
