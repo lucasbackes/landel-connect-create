@@ -1,5 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Gamepad2,
   Leaf,
@@ -7,7 +6,6 @@ import {
   CloudSun,
   GraduationCap,
   Download,
-  
   Globe2,
   Github,
   Instagram,
@@ -20,7 +18,9 @@ import galleryGamepad from "@/assets/gallery-gamepad.jpg";
 import galleryClassroom from "@/assets/gallery-classroom.jpg";
 import galleryGarden from "@/assets/gallery-garden.jpg";
 import appGamepad from "@/assets/app-gamepad.png";
-import { translations, type Lang } from "@/lib/i18n";
+import { useLang } from "@/hooks/use-lang";
+import { LangSwitcher } from "@/components/lang-switcher";
+import { translations } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
