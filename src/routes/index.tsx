@@ -20,7 +20,7 @@ import galleryGarden from "@/assets/gallery-garden.jpg";
 import appGamepad from "@/assets/app-gamepad.png";
 import { useLang } from "@/hooks/use-lang";
 import { LangSwitcher } from "@/components/lang-switcher";
-import { translations } from "@/lib/i18n";
+import { translations, type Lang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,7 +43,7 @@ const FEATURE_ICONS = [Gamepad2, Leaf, Home, CloudSun, GraduationCap] as const;
 const FEATURE_TONES = ["primary", "secondary", "purple", "accent", "primary"] as const;
 
 function LandingPage() {
-  const [lang, setLang] = useState<Lang>("pt");
+  const [lang, setLang] = useLang();
   const t = translations[lang];
 
   return (
@@ -70,10 +70,10 @@ function Header({
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="Landel" className="h-9 w-9 rounded-lg" />
           <span className="font-display font-bold text-lg tracking-tight">Landel</span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#features" className="hover:text-foreground transition-colors">{t.nav.features}</a>
           <a href="#gallery" className="hover:text-foreground transition-colors">{t.nav.gallery}</a>
@@ -93,26 +93,6 @@ function Header({
   );
 }
 
-function LangSwitcher({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
-  const langs: Lang[] = ["pt", "en", "es"];
-  return (
-    <div className="flex items-center gap-1 rounded-full border border-border bg-card/50 p-1 text-xs">
-      {langs.map((l) => (
-        <button
-          key={l}
-          onClick={() => setLang(l)}
-          className={`px-2.5 py-1 rounded-full uppercase font-semibold tracking-wide transition-all ${
-            lang === l
-              ? "bg-primary text-primary-foreground"
-              : "text-muted-foreground hover:text-foreground"
-          }`}
-        >
-          {l}
-        </button>
-      ))}
-    </div>
-  );
-}
 
 /* ---------- Hero ---------- */
 function Hero({ t }: { t: (typeof translations)[Lang] }) {
@@ -355,9 +335,14 @@ function Footer({ t }: { t: (typeof translations)[Lang] }) {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 py-6 text-xs text-muted-foreground flex flex-col sm:flex-row gap-2 justify-between">
+        <div className="mx-auto max-w-7xl px-6 py-6 text-xs text-muted-foreground flex flex-col sm:flex-row gap-2 justify-between items-center">
           <span>© {new Date().getFullYear()} Landel. {t.footer.rights}</span>
-          <span>landel.app.br</span>
+          <div className="flex items-center gap-4">
+            <Link to="/privacidade" className="hover:text-primary transition-colors">
+              {t.footer.links.privacy}
+            </Link>
+            <span>landel.app.br</span>
+          </div>
         </div>
       </div>
     </footer>
